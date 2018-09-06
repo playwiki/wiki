@@ -1,0 +1,7 @@
+Status Value	Meaning
+fully operational	All cluster processes are running.
+operational	All node groups are up and running, but at least one data node process (ndbd or ndbmtd) is not running. The cluster is online, but you should determine why any “missing” data nodes are not running and correct the problem as soon as possible.
+non-operational	The cluster is not operational, because at least one node group is offline. You must investigate and fix the problem or problems, then restart the cluster, before the cluster can be used for data storage and retrieval operations.
+stopped	The cluster is not running, because it has been stopped by the user. This normally does not indicate any problem as such, but you must restart the cluster before it can be used by any applications.
+created	The cluster has been created successfully using the create cluster command, but has never been started. You must start the cluster using the start cluster command before you can make use of it.
+unknown	The MySQL Cluster Manager was unable to determine the cluster's status. This may or may not indicate a problem with the cluster; it is possible that the problem lies with one or more MySQL Cluster Manager agents or the MySQL Cluster Manager client. You should attempt to determine the status of the cluster by other means, such as using show status --process in the MySQL Cluster Manager client (described later in this section), or employing one of the commands available in the ndb_mgm client (see ndb_mgm — The MySQL Cluster Management Client) such as SHOW or ALL STATUS.
